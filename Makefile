@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help copy link
+.PHONY: help copy link macos
 SHELL=/usr/bin/env bash
 
 GREEN=\033[0;32m
@@ -36,4 +36,9 @@ copy: ## Copy dotfiles
 link: ## Link dotfiles (symbolic links)
 	@echo -e "${YELLOW} Linking files ${STOP} \n"
 	./script/process-files.sh `pwd` files link
+	@echo -e "\n${YELLOW} Done ${STOP}"
+
+macos: ## Setup mac-os specifics
+	@echo -e "${YELLOW} Sourcing... ${STOP} \n"
+	source macos/macos
 	@echo -e "\n${YELLOW} Done ${STOP}"
