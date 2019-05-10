@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help copy link macos macos-brew-packages macos-brew-install
+.PHONY: help copy link macos macos-brew-packages macos-brew-install setup-mac
 SHELL=/usr/bin/env bash
 
 GREEN=\033[0;32m
@@ -28,28 +28,30 @@ help: ## Help Dialog
         printf "%s\n" $$help_info; \
     done
 
+setup-mac: link macos-brew-install macos-brew-packages macos ## Setup mac
+	@echo -e "\n${GREEN} Done. Your mac is ready to use! ${STOP}"
+
 copy: ## Copy dotfiles
-	@echo -e "${YELLOW} Copyig files ${STOP} \n"
+	@echo -e "\n${YELLOW} Copyig files ${STOP} \n"
 	@./script/process-files.sh `pwd` files copy
-	@echo -e "\n${YELLOW} Done ${STOP}"
+	@echo -e "\n${GREEN} Done ${STOP}"
 
 link: ## Link dotfiles (symbolic links)
-	@echo -e "${YELLOW} Linking files ${STOP} \n"
+	@echo -e "\n${YELLOW} Linking files ${STOP} \n"
 	./script/process-files.sh `pwd` files link
-	@echo -e "\n${YELLOW} Done ${STOP}"
+	@echo -e "\n${GREEN} Done ${STOP}"
 
 macos: ## Setup mac-os specifics
-	@echo -e "${YELLOW} Sourcing... ${STOP} \n"
+	@echo -e "\n${YELLOW} Setting up mac-os specifics... ${STOP} \n"
 	source macos/macos
-	./macos/brew
-	@echo -e "\n${YELLOW} Done ${STOP}"
+	@echo -e "\n${GREEN} Done ${STOP}"
 
 macos-brew-packages: ## Install brew packages
-	@echo -e "${YELLOW} Installing pacakges... ${STOP} \n"
+	@echo -e "\n${YELLOW} Installing pacakges... ${STOP} \n"
 	./macos/brew
-	@echo -e "\n${YELLOW} Done ${STOP}"
+	@echo -e "\n${GREEN} Done ${STOP}"
 
 macos-brew-install: ## Install brew package manager
-	@echo -e "${YELLOW} Installing brew package manager... ${STOP} \n"
+	@echo -e "\n${YELLOW} Installing brew package manager... ${STOP} \n"
 	sh macos/brew-install
-	@echo -e "\n${YELLOW} Done ${STOP}"
+	@echo -e "\n${GREEN} Done ${STOP}"
