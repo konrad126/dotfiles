@@ -1,0 +1,40 @@
+
+[alias]
+
+	# --------------------------------------------------------------------------
+	# Repository information
+	# --------------------------------------------------------------------------
+	s = status
+	# Simple decorated log with 20 latest commits
+	l = log --oneline --decorate 
+	# Simple decorated log with 20 latest commits and graph
+	lg = log --oneline --decorate -n 20 --graph
+	# Regular diff
+	d = diff
+	# Branch list
+	b = branch
+
+
+	# --------------------------------------------------------------------------
+	# Commits
+	# --------------------------------------------------------------------------
+	# Add all (including non-staged) files
+	aa = add -A
+	# Uncommit last commit
+	uncommit = reset --soft HEAD^
+
+[include]
+	# Set the extra personal settings (e.g. name and email)
+	path = ~/.gitconfig_extra
+
+[credential]
+	helper = osxkeychain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	autocrlf = input
+[user]
+	email = zspajich@gmail.com
