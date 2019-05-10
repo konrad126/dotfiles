@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# Make sure we’re using the latest Homebrew
+brew update
+
+brew tap homebrew/services
+brew tap caskroom/cask
+brew tap caskroom/versions
+
+# ==============================================================================
+# Install Cask apps/resources
+# ==============================================================================
+
+brew cask install firefox
+brew cask install google-chrome
+brew cask install mpv
+brew cask install sublime-text
+brew cask install transmission
+brew cask install virtualbox
+brew cask install docker
+
+# ==============================================================================
+# Install standard packages
+# ==============================================================================
+
+brew install git
+brew install wget
+brew install youtube-dl
+brew install docker-completion
+brew install docker-compose-completion
+brew install curl
+
+# Remove outdated versions from the cellar
+brew cleanup

@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help copy link macos
+.PHONY: help copy link macos macos-brew
 SHELL=/usr/bin/env bash
 
 GREEN=\033[0;32m
@@ -41,4 +41,10 @@ link: ## Link dotfiles (symbolic links)
 macos: ## Setup mac-os specifics
 	@echo -e "${YELLOW} Sourcing... ${STOP} \n"
 	source macos/macos
+	./macos/brew
+	@echo -e "\n${YELLOW} Done ${STOP}"
+
+macos-brew: ## Install brew packages
+	@echo -e "${YELLOW} Installing pacakges... ${STOP} \n"
+	./macos/brew
 	@echo -e "\n${YELLOW} Done ${STOP}"
