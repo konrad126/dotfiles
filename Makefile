@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help copy link macos macos-brew
+.PHONY: help copy link macos macos-brew-packages macos-brew-install
 SHELL=/usr/bin/env bash
 
 GREEN=\033[0;32m
@@ -44,7 +44,12 @@ macos: ## Setup mac-os specifics
 	./macos/brew
 	@echo -e "\n${YELLOW} Done ${STOP}"
 
-macos-brew: ## Install brew packages
+macos-brew-packages: ## Install brew packages
 	@echo -e "${YELLOW} Installing pacakges... ${STOP} \n"
 	./macos/brew
+	@echo -e "\n${YELLOW} Done ${STOP}"
+
+macos-brew-install: ## Install brew package manager
+	@echo -e "${YELLOW} Installing brew package manager... ${STOP} \n"
+	sh macos/brew-install
 	@echo -e "\n${YELLOW} Done ${STOP}"
