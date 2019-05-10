@@ -30,6 +30,7 @@ brew install youtube-dl
 brew install docker-completion
 brew install docker-compose-completion
 brew install curl
+brew install tmux
 
 # Remove outdated versions from the cellar
 brew cleanup
