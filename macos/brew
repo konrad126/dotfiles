@@ -19,6 +19,7 @@ brew cask install transmission
 brew cask install virtualbox
 brew cask install docker
 brew cask install alfred
+brew cask install iterm2
 
 # ==============================================================================
 # Install standard packages
