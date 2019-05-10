@@ -30,10 +30,10 @@ help: ## Help Dialog
 
 copy: ## Copy dotfiles
 	@echo -e "${YELLOW} Copyig files ${STOP} \n"
-	@./script/process-files.sh files copy
+	@./script/process-files.sh `pwd` files copy
 	@echo -e "\n${YELLOW} Done ${STOP}"
 
 link: ## Link dotfiles (symbolic links)
 	@echo -e "${YELLOW} Linking files ${STOP} \n"
-	@./script/process-files.sh files link
+	./script/process-files.sh `pwd` files link
 	@echo -e "\n${YELLOW} Done ${STOP}"
