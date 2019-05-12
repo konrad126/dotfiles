@@ -20,6 +20,7 @@ brew cask install virtualbox
 brew cask install docker
 brew cask install alfred
 brew cask install iterm2
+brew cask install sketch
 
 # ==============================================================================
 # Install standard packages
