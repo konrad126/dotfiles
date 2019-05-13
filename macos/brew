@@ -21,6 +21,8 @@ brew cask install alfred
 brew cask install iterm2
 brew cask install sketch
 brew cask install phpstorm
+brew cask install slack 
+
 
 # ==============================================================================
 # Install standard packages
