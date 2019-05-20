@@ -15,5 +15,9 @@ alias hidedotfiles="defaults write com.apple.finder AppleShowAllFiles -bool fals
 # Open in current directory when running subl
 alias subl="subl ."
 
+
 # tmux
 alias t=tmux
+alias tl="tmux ls"
+alias ta="tmux attach-session -t"
+alias tk="tmux kill-session -t"
