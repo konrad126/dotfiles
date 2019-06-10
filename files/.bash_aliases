@@ -16,6 +16,8 @@ alias hidedotfiles="defaults write com.apple.finder AppleShowAllFiles -bool fals
 alias subl="subl ."
 
 
+# ssh problem
+alias s="ssh-add -K &>/dev/null"
 # tmux
 alias t=tmux
 alias tl="tmux ls"
