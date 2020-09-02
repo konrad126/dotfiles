@@ -25,6 +25,7 @@ brew cask install phpstorm
 brew cask install slack 
 brew cask install sublime-merge
 brew cask install font-fira-code
+brew cask install notion
 
 # ==============================================================================
 # Install standard packages
