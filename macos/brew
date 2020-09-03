@@ -26,6 +26,7 @@ brew cask install slack
 brew cask install sublime-merge
 brew cask install font-fira-code
 brew cask install notion
+brew cask install spotify
 
 # ==============================================================================
 # Install standard packages
